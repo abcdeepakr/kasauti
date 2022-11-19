@@ -1,12 +1,12 @@
 {
-  "name": "calculator_app_tests",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+    "name": "calculator_app_tests",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "mocha tests/index.test.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
 }
