@@ -1,0 +1,26 @@
+{
+    "name": "js-testing",
+    "version": "1.0.0",
+    "description": "creating a small app and writing test cases for the same in JS",
+    "main": "index.js",
+    "scripts": {
+        "test": "mocha tests/index.test.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/DeepakR-28/kasauti.git"
+    },
+    "keywords": [
+        "huhu",
+        "haha",
+        "fear",
+        "driven",
+        "development"
+    ],
+    "author": "deepak rawat",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/DeepakR-28/kasauti/issues"
+    },
+    "homepage": "https://github.com/DeepakR-28/kasauti#readme"
+}
