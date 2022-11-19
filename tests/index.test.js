@@ -28,3 +28,21 @@ describe("complete()", function(){
     }, expectedError)
   })
 })
+
+// Asynchronous testing
+
+describe('fetchTodos()', () => { 
+  it("should fetch todos from the server and add to array", async () =>{
+    let todos = new Todos();
+    let fetchedTodos = await todos.fetchTodos(1);
+    assert.deepStrictEqual(todos.list().length, 1);
+  })
+  
+  it("should fail if API call fails", async () =>{
+    let todos = new Todos();
+    const expectedError = new Error("invalid id");
+    await assert.rejects(async ()=>{
+      let fetchedTodos = await todos.fetchTodos(9999);
+    }, expectedError)
+  })
+ })

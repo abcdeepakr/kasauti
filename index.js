@@ -1,3 +1,4 @@
+const fetch = require('node-fetch')
 class Todos {
   constructor() {
     this.todos = [];
@@ -26,12 +27,30 @@ class Todos {
             return;
         }
     });
-
     if (!todoFound) {
         throw new Error(`No TODO was found with the title: "${title}"`);
     }
   }
+
+  async fetchTodos(id) {
+    let res = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`)
+      .then(response => response.json())
+      .then(json => {
+        if(Object.keys(json).length == 0){
+          throw new Error("invalid id")
+        }
+        this.add(json.title)
+        return json.title
+      }).catch(err =>{
+        throw new Error(err.message)
+      });
+    return res
+  }
+  
 }
 
+// const todo = new Todos()
+
+// console.log(todo.fetchTodos(10000000).then(res => console.log(res)))
 module.exports = Todos;
 

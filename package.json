@@ -22,5 +22,8 @@
     "bugs": {
         "url": "https://github.com/DeepakR-28/kasauti/issues"
     },
-    "homepage": "https://github.com/DeepakR-28/kasauti#readme"
+    "homepage": "https://github.com/DeepakR-28/kasauti#readme",
+    "dependencies": {
+        "node-fetch": "^2.6.7"
+    }
 }
