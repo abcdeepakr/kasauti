@@ -4,50 +4,49 @@ const API = require('../api/api')
 const AsynchronousMethods = require('../index')
 
 
-// describe("init", ()=>{
-//   it("should fail for unequal values",()=>{
-//     assert.notStrictEqual(1,2)
-//   })
-//   it("should pass for equal values",()=>{
-//     assert.strictEqual(1,1)
-//   })
-// })
+describe("init", ()=>{
+  it("should fail for unequal values",()=>{
+    assert.notStrictEqual(1,2)
+  })
+  it("should pass for equal values",()=>{
+    assert.strictEqual(1,1)
+  })
+})
 
-// describe("fetch()", ()=>{
-//   const asynchronousMethods = new AsynchronousMethods()
-//   it("should fail for id", async () =>{
-//     let response = await asynchronousMethods.fetch(1)
-//     assert.notStrictEqual(response.data.id, 2)    
-//   })
+describe("fetch()", ()=>{
+  const asynchronousMethods = new AsynchronousMethods()
+  it("should fail for id", async () =>{
+    let response = await asynchronousMethods.fetch(1)
+    assert.notStrictEqual(response.data.id, 2)    
+  })
 
-//   it("should fail for string id", ()=>{
-//     const expectedError = "invalid id"
-//     assert.rejects(()=>{
-//       asynchronousMethods.fetch("1")
-//     },expectedError)
-//   })
-//   it('should return status code 404 for invalid id', async ()=>{
-//     let response = await asynchronousMethods.fetch(999)
-//     assert.strictEqual(response.status, 404)
-//   })
-//   it('should pass for valid id', async ()=>{
-//     let response = await asynchronousMethods.fetch(1)
-//     assert.strictEqual(response.status, 200)
-//   })
-//   it('should pass for valid json body', async ()=>{
-//     let response = await asynchronousMethods.fetch(1)
-//     assert.strictEqual(response.data.hasOwnProperty("id"), true)
-//   })
-//   it('should return empty json for invalid id', async ()=>{
-//     let response = await asynchronousMethods.fetch(1000)
-//     assert.strictEqual(Object.keys(response.data).length, 0)
-//   })
-// })
-
+  it("should fail for string id", ()=>{
+    const expectedError = "invalid id"
+    assert.rejects(()=>{
+      asynchronousMethods.fetch("1")
+    },expectedError)
+  })
+  it('should return status code 404 for invalid id', async ()=>{
+    let response = await asynchronousMethods.fetch(999)
+    assert.strictEqual(response.status, 404)
+  })
+  it('should pass for valid id', async ()=>{
+    let response = await asynchronousMethods.fetch(1)
+    assert.strictEqual(response.status, 200)
+  })
+  it('should pass for valid json body', async ()=>{
+    let response = await asynchronousMethods.fetch(1)
+    assert.strictEqual(response.data.hasOwnProperty("id"), true)
+  })
+  it('should return empty json for invalid id', async ()=>{
+    let response = await asynchronousMethods.fetch(1000)
+    assert.strictEqual(Object.keys(response.data).length, 0)
+  })
+})
 
 
 /*
- * Insertion test
+ * Data Insertion test
  * Testing for the following scenarios:
  * 
  * 1) Valid request method
